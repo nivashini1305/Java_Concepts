@@ -60,12 +60,12 @@ public class EmployeeManager implements EmployeeManagerInterface{
         System.out.print("Enter the employee id to search:");
         String id = sc.next();
         try{
-            if (EmployeeManager.getHashMap().containsKey(id)) {
-                System.out.println(id+" exists...");
+
                 Employee info=EmployeeManager.getHashMap().get(id);
                 System.out.println("Name: "+info.employeeName+"\nID: "+info.employeeId+"\nDepartment: "+info.department+"\nSalary: "+String.format("%,d",info.salary));
-            }
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
             System.out.println("ID not found");
         }
     }
